@@ -12,7 +12,7 @@ const theme: DefaultTheme = {
     '#757575',
   ],
   blue: {
-    light: '#ECF2FF',, 
+    light: '#ECF2FF',
     theme: '#5383E8',
     dark: '#232F46',
   },
