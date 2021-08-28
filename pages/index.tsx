@@ -4,10 +4,8 @@ import Layout from '../src/components/layout'
 
 export default function Home() {
   return (
-    <div>
-      <Layout>
-        <div>메인 페이지!</div>
-      </Layout>
-    </div>
+    <Layout>
+      <div>메인 페이지!</div>
+    </Layout>
   )
 }

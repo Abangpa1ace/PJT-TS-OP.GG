@@ -1,21 +1,33 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
+import styled from 'styled-components';
 import AppHeader from './AppHeader'
 import AppFooter from './AppFooter'
 
 const Layout: React.FC<ReactNode> = ({ children }) => {
   return (    
-    <div>
+    <LayoutStyle>
       <Head>
         <title>롤 전적 검색 OP.GG</title>
-        <link rel="icon" href="/static/favicon.ico" />
+        <link rel="icon" href="/assets/favicon.ico" />
         {/* <meta keyword='키워드!' contents='키워드!' /> */}
       </Head>
       <AppHeader />
-      {children}
+      <main id="page">
+        {children}
+      </main>
       <AppFooter />
-    </div>
+    </LayoutStyle>
   )
 }
+
+const LayoutStyle = styled.div`
+  #page {
+    width: ${({ theme }) => theme.width.main};
+    height: 80vh;
+    margin: 0 auto;
+    border: 1px solid red;
+  }
+`
 
 export default Layout

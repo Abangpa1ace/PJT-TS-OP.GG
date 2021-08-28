@@ -4,7 +4,8 @@ import theme from '../src/styles/theme';
 import { useGlobalContext } from '../src/Context';
 
 function MyApp({ Component, pageProps }) {
-  const { isLoading } = useGlobalContext();
+  // const { isLoading } = useGlobalContext();
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalReset />

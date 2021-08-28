@@ -5,14 +5,13 @@ const GlobalReset = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   }
   body {
-    max-width: 500px;
-    min-height: 100vh;
-    margin: 0 800px;
-    border: 2px solid red;
+    background-color: #EAEAEA;
+    color: #333333;
+    font-size: 13px;
+    line-height: 16px;
   }
   ul, li {
     list-style: none;

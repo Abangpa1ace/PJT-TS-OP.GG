@@ -1,1 +1,1 @@
-export const API = 'http://';
+export const API = 'http://kr.api.riotgames.com/lol/';
