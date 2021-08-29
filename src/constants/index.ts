@@ -7,3 +7,10 @@ export const HEADERS = {
   Origin: "https://developer.riotgames.com",
   "X-Riot-Token": "RGAPI-880c6544-c0b9-4fad-a6b4-346ff948d260"
 }
+
+export const KEY = {
+  GC: '1',
+  SW: '2',
+  JN: '3',
+  TH: '4',
+}

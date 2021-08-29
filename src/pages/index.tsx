@@ -15,7 +15,7 @@ export default function Home() {
   const searchName = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log(name);
-    axios.get(`${API}/summoner/v4/summoners/by-name/${name}?api_key=${'RGAPI-880c6544-c0b9-4fad-a6b4-346ff948d260'}`)
+    axios.get(`${API}/summoner/v4/summoners/by-name/${name}`, {}, HEADERS)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
