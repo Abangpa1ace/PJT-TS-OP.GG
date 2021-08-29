@@ -6,7 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "react": ["./src/types"]
+    },
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "skipLibCheck": true,
     "strict": false,
