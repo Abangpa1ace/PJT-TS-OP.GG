@@ -24,9 +24,9 @@ const Layout: React.FC<ReactNode> = ({ children }) => {
 const LayoutStyle = styled.div`
   #page {
     width: ${({ theme }) => theme.width.main};
-    height: 80vh;
+    min-height: 80vh;
     margin: 0 auto;
-    border: 1px solid red;
+    padding: 30px 0 ;
   }
 `
 

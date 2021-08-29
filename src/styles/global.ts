@@ -8,7 +8,7 @@ const GlobalReset = createGlobalStyle`
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   }
   body {
-    background-color: #EAEAEA;
+    background-color: ${({ theme }) => theme.gray[0]};
     color: #333333;
     font-size: 13px;
     line-height: 16px;
@@ -17,7 +17,7 @@ const GlobalReset = createGlobalStyle`
     list-style: none;
   }
   input {
-    background: transparent;
+    background: #ffffff;
     border: 0;
     outline: 0;
   }

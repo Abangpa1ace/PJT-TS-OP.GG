@@ -1,6 +1,16 @@
-import { css, DefaultTheme } from 'styled-components';
+import { css } from 'styled-components';
 
-const theme: DefaultTheme = {
+type defaultTheme = {
+  width: Object;
+  gray: String[];   // gray[0 ~ 3] 과 같이 응용
+  blue: Object;
+  green: Object;
+  win: Object;    // win-blue color
+  lose: Object;   // lose-red color
+  transition: String;
+}
+
+const theme: defaultTheme = {
   width: {
     'nav': '1300px',
     'main': '1080px',

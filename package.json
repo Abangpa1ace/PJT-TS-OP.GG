@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
-    "build": "next build -p 3001",
-    "start": "next start -p 3001",
+    "next": "next ./src",
+    "dev": "next dev ./src -p 3001",
+    "build": "next build ./src -p 3001",
+    "start": "next start ./src -p 3001",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,6 +14,8 @@
     "@types/node": "^16.7.2",
     "@types/react": "^17.0.19",
     "@types/styled-components": "^5.1.13",
+    "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.13.2",
     "eslint-plugin-react": "^7.24.0",
     "next": "11.1.0",
     "react": "17.0.2",
