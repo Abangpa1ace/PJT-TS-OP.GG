@@ -4,9 +4,14 @@ import styled from 'styled-components';
 import AppHeader from './AppHeader'
 import AppFooter from './AppFooter'
 
-const Layout: React.FC<ReactNode> = ({ children }) => {
+type Props = {
+  children: ReactNode;
+  isBlue?: boolean;
+}
+
+const Layout: React.FC<Props> = ({ children, isBlue }) => {
   return (    
-    <LayoutStyle>
+    <LayoutStyle isBlue={isBlue}>
       <Head>
         <title>롤 전적 검색 OP.GG</title>
         <link rel="icon" href="/assets/favicon.ico" />
@@ -16,15 +21,17 @@ const Layout: React.FC<ReactNode> = ({ children }) => {
       <main id="page">
         {children}
       </main>
-      <AppFooter />
+      <AppFooter isFontWhite={isBlue} />
     </LayoutStyle>
   )
 }
 
 const LayoutStyle = styled.div`
+  background-color: ${({ theme, isBlue }) => isBlue && theme.blue.theme};
+  min-height: 100vh;
+
   #page {
     width: ${({ theme }) => theme.width.main};
-    min-height: 80vh;
     margin: 0 auto;
     padding: 30px 0 ;
   }

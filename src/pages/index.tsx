@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 export default function Home() {
 
   return (
-    <Layout>
+    <Layout isBlue>
       <HomePage>
         <h2>랜딩 페이지!!!</h2>
       </HomePage>
@@ -14,4 +14,5 @@ export default function Home() {
 }
 
 const HomePage = styled.div`
+
 `;
