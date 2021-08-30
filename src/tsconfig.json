@@ -6,6 +6,12 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "typeRoots": [
       "./node_modules/@types/",
       "./src/types/"
@@ -26,7 +32,6 @@
     "outDir": "dist",
   },
   "include": [
-    "src/**/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"

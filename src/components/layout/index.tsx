@@ -14,7 +14,7 @@ const Layout: React.FC<Props> = ({ children, isBlue }) => {
     <LayoutStyle isBlue={isBlue}>
       <Head>
         <title>롤 전적 검색 OP.GG</title>
-        <link rel="icon" href="/assets/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
         {/* <meta keyword='키워드!' contents='키워드!' /> */}
       </Head>
       <AppHeader />
