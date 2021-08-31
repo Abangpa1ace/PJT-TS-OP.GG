@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react'
 import styled from 'styled-components';
-import Layout from '@/components/layout'
+import Layout from '../components/layout'
 
 export default function Home() {
 

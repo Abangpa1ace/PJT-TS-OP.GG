@@ -1,7 +1,18 @@
 import axios from 'axios';
-import { API } from '../constants';
+import { API, KEY } from '../constants';
 
-export const getSummonerInfo = async (name) => {
-  const res = await axios.get(`${API}/summoner/v4/summoners/by-name/${name}`)
-  await console.log(res)
+const makeQuery = (query?, initial='TH') => {
+  let str = `?api_key=${KEY[initial]}`
+  if (query) {
+    Object.entries(query).forEach(([k,v]) => str += `&${k}=${v}`);
+  }
+  return str;
+}
+
+const api = {
+  get: (url, query) => axios.get(API + url + makeQuery(query))
+}
+
+export const getSummonerInfo = (name) => {
+  return api.get(`/summoner/v4/summoners/by-name/${name}`, {});
 }
