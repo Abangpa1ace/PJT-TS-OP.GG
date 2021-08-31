@@ -3,8 +3,8 @@ import React from 'react'
 const RecordItem: React.FC<RecordProps> = ({ accountId, name }) => {
   return (
     <div>
-      개인ID : {accountId} <br />
-      소환사명: {name}
+      소환사 레벨 : {accountId} <br />
+      소환사명 : {name}
     </div>
   )
 }
