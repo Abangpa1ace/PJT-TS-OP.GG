@@ -46,6 +46,11 @@ const theme: defaultTheme = {
 
 export default theme;
 
+export const webCenter = css`
+  width: ${({ theme }) => theme.width.main};
+  margin: 0 auto;
+`;
+
 export const flexCenter = css`
   display: flex;
   justify-content: center;

@@ -18,9 +18,7 @@ const Layout: React.FC<Props> = ({ children, isBlue }) => {
         {/* <meta keyword='키워드!' contents='키워드!' /> */}
       </Head>
       <AppHeader />
-      <main id="page">
-        {children}
-      </main>
+      {children}
       <AppFooter isFontWhite={isBlue} />
     </LayoutStyle>
   )
@@ -31,10 +29,4 @@ export default Layout
 const LayoutStyle = styled.div`
   background-color: ${({ theme, isBlue }) => isBlue && theme.blue.theme};
   min-height: 100vh;
-
-  #page {
-    width: ${({ theme }) => theme.width.main};
-    margin: 0 auto;
-    padding: 30px 0 ;
-  }
 `

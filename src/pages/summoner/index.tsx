@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { getSummonerInfo } from '../../services'
 import Layout from '../../components/layout'
-import SummonerItem from '../../components/summoner/summonerItem'
+import SummonerTop from '../..//components/summoner/summonerTop'
 
 const SummonerPage = () => {
   const [user, setUser] = useState({});
@@ -17,10 +18,23 @@ const SummonerPage = () => {
 
   return (
     <Layout>
-      <h3>전적 페이지</h3>
-      <SummonerItem accountId={user.summonerLevel} name={user.name} />
+      <SummonerContainer>
+        <SummonerTop />
+        <div className='summoner-body'>
+          <section></section>
+          <section></section>
+        </div>
+      </SummonerContainer>
     </Layout>
   )
 }
+
+const SummonerContainer = styled.main`
+
+  .summoner-body {
+    height: 1000px;
+    border: 1px solid blue;
+  }
+`;
 
 export default SummonerPage
