@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import satc from '../../utils';
 import { getSummonerInfo } from '../../services'
 import Layout from '../../components/layout'
 import RecordItem from '../../components/record/recordItem'
