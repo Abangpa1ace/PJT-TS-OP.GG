@@ -15,7 +15,7 @@ const AppHeader: React.FC = () => {
         <nav className="nav">
           {ROUTES.map((r) => {
             return (
-              <NavItem className={r.path === router.pathname ? 'active' : ''}>
+              <NavItem className={r.path === router.pathname ? 'active' : ''} key={r.name}>
                 <Link href={r.path}>{r.text}</Link>
               </NavItem>
             )
