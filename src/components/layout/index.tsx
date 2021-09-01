@@ -26,6 +26,8 @@ const Layout: React.FC<Props> = ({ children, isBlue }) => {
   )
 }
 
+export default Layout
+
 const LayoutStyle = styled.div`
   background-color: ${({ theme, isBlue }) => isBlue && theme.blue.theme};
   min-height: 100vh;
@@ -36,5 +38,3 @@ const LayoutStyle = styled.div`
     padding: 30px 0 ;
   }
 `
-
-export default Layout

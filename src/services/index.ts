@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { API, KEY } from '../constants';
 
-const makeQuery = (query?, initial='TH') => {
-  let str = `?api_key=${KEY[initial]}`
+const makeQuery = (query?) => {
+  let str = `?api_key=${KEY}`
   if (query) {
     Object.entries(query).forEach(([k,v]) => str += `&${k}=${v}`);
   }
@@ -16,3 +16,12 @@ const api = {
 export const getSummonerInfo = (name) => {
   return api.get(`/summoner/v4/summoners/by-name/${name}`, {});
 }
+
+export const getRecentMatches = (puuid, start=0, count=20) => {
+  const query = { start, count, };
+  return api.get(`/match/v5/matches/by-puuid/${puuid}/ids`, query)
+}
+
+export const getMatch = (matchId) => {
+  return api.get(`/match/v5/matches/${matchId}`, {})
+} 

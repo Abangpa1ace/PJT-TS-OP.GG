@@ -5,9 +5,9 @@ export const ROUTES = [
     text: '#집에있자',
   },
   {
-    name: 'record',
-    path: '/record',
-    text: '전적검색',
+    name: 'summoner',
+    path: '/summoner',
+    text: '소환사 전적',
   },
   {
     name: 'statistics',
@@ -18,9 +18,4 @@ export const ROUTES = [
 
 export const API = 'https://kr.api.riotgames.com/lol';
 
-export const KEY = {
-  GC: null,
-  SW: null,
-  SH: null,
-  TH: 'RGAPI-cc63bf5a-996f-4f21-bc7c-c5f3f3d3b141',
-}
+export const KEY = 'RGAPI-cc63bf5a-996f-4f21-bc7c-c5f3f3d3b141'

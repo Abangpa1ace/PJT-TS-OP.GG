@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecordItem: React.FC<RecordProps> = ({ accountId, name }) => {
+const SummonerItem: React.FC = ({ accountId, name }) => {
   return (
     <div>
       소환사 레벨 : {accountId} <br />
@@ -9,4 +9,5 @@ const RecordItem: React.FC<RecordProps> = ({ accountId, name }) => {
   )
 }
 
-export default RecordItem
+
+export default SummonerItem

@@ -1,5 +1,5 @@
 declare global {
-  interface RecordProps {
+  interface ExampleProps {
     accountId: Number;
     name: String;
   }
