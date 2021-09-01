@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API, KEY } from '../constants';
+import { API, HEADERS, KEY } from '../constants';
 
 const makeQuery = (query?) => {
   let str = `?api_key=${KEY}`

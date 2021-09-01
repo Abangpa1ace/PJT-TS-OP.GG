@@ -13,7 +13,7 @@ type defaultTheme = {
 const theme: defaultTheme = {
   width: {
     'nav': '1300px',
-    'main': '1080px',
+    'main': '1000px',
   },
   gray: [
     '#F9F9F9',
