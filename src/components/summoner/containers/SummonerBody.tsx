@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
-import { getRecentMatches } from '../../../services';
+import { getRecentMatches, getMatch } from '../../../services';
 import { webCenter  } from '../../../styles/theme';
 
 type Props = {
@@ -12,6 +12,7 @@ const count = 20;
 
 const SummonerBody = ({ user, puuid }) => {
   const [matches, setMatches] = useState([]);
+  const [matchList, setMatchList] = useState([]);
   const [start, setStart] = useState(0);
 
   useEffect(() => {
@@ -19,8 +20,19 @@ const SummonerBody = ({ user, puuid }) => {
   }, [puuid])
 
   const fetchRecentMatches = async (puuid) => {
-    const res = await getRecentMatches(puuid, start, count);
-    console.log(res);
+    const result = await getRecentMatches(puuid, start, count);
+    setMatches(result?.data);
+    fetchMatchList();
+  }
+
+  const fetchMatchList = async () => {
+    if (matches?.length > 0) {
+      matches?.forEach(async (m,i) => {
+        const res = await getMatch(m);
+        setMatchList([...matchList, res?.data.info])
+      })
+      console.log(matchList);
+    }
   }
 
 
@@ -28,7 +40,18 @@ const SummonerBody = ({ user, puuid }) => {
     <BodyContainer>
       <div className="body-main">
         <aside></aside>
-        <section></section>
+        <section>
+          {matches && matches.map(m => <p>{m}</p>)}
+          {/* {matchList && matchList.map((m) => {
+            return (
+              <div>
+                <p>게임종류: {m?.gameMode}</p>
+                <p>게임시점: {m?.gameStartTimestamp}</p>
+                <p></p>
+              </div>
+            )}
+          )} */}
+        </section>
       </div>
     </BodyContainer>
   )
