@@ -16,6 +16,25 @@ export const ROUTES = [
   },
 ]
 
+export const queueType = {
+  420: {
+    type: 'soloRank',
+    ko: '솔랭'
+  },
+  430: {
+    type: 'normal',
+    ko: '일반'
+  },
+  440: {
+    type: 'teamRank',
+    ko: '자유 5:5랭크'
+  },
+  450: {
+    type: 'aram',
+    ko: '무작위 총력전',
+  }
+}
+
 export const API = {
   kr: 'https://kr.api.riotgames.com/lol',
   asia: 'https://asia.api.riotgames.com/lol'
@@ -31,5 +50,5 @@ export const HEADERS = {
   }
 }
 
-export const KEY = 'RGAPI-596b3c51-13d1-4114-9959-f06f66fbfbda'
+export const KEY = 'RGAPI-1af3f1d0-4cc7-4345-8c95-d2b2d1a999ec'
 

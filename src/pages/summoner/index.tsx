@@ -13,8 +13,8 @@ const SummonerPage = () => {
   }, [])
 
   const fetchSummonerInfo = async () => {
-    const res = await getSummonerInfo('Mal Francais');
-    await setUser(res.data);
+    const res = await getSummonerInfo('Kilmo');
+    setUser(res?.data);
   }
 
   return (
