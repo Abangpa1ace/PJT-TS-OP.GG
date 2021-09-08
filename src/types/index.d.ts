@@ -15,6 +15,8 @@ declare global {
     teams: object[];
     tournamentCode: string;
   }
+
+  
 }
 
 export {}
