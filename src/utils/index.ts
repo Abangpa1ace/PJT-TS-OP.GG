@@ -1,4 +1,4 @@
-import { queueType } from '../constants';
+import { queueType, DDRAGON_VER } from '../constants';
 
 // GameStats
 export const setMinSec = (ms) => {
@@ -34,4 +34,13 @@ export const setTimePass = (value) => {
   }
 
   return `${Math.floor(betweenTimeDay / 365)}년 전`;
+}
+
+// GameChamp
+export const getChampImgUrl = (name) => {
+  return `https://ddragon.leagueoflegends.com/cdn/${DDRAGON_VER}/img/champion/${name}.png`
+}
+
+export const getSpellImgUrl = (spell) => {
+  return `https://ddragon.leagueoflegends.com/cdn/${DDRAGON_VER}/img/spell/${spell}.png`
 }

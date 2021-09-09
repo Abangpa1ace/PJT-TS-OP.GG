@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { webCenter } from '../../../styles/theme';
 
 type Props = {
-  user: Object;
+  user: BasicSummonerInfo
 }
 
 const SummonerTop = ({ user }) => {

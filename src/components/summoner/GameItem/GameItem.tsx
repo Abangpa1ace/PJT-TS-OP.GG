@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import styled from 'styled-components';
 import { getMatch } from '../../../services';
+import GameChamp from './GameChamp';
 import GameStats from './GameStats';
 
 type Props = {
@@ -10,7 +11,8 @@ type Props = {
 
 const GameItem: React.FC<Props> = ({ puuid, gameId }) => {
   const [game, setGame] = useState({});
-  const winLose = game?.participants?.find(p => p.puuid === puuid)?.win ? 'win' : 'lose';
+  const myInfo = game?.participants?.find(p => p.puuid === puuid)
+  const winLose = myInfo?.win ? 'win' : 'lose';
 
   useEffect(() => {
     fetchMatchRecord();
@@ -25,11 +27,13 @@ const GameItem: React.FC<Props> = ({ puuid, gameId }) => {
   return (
     <GameItemStyled winLose={winLose}>
       <GameStats game={game} winLose={winLose} />
+      <GameChamp game={game} myInfo={myInfo} />
     </GameItemStyled>
   )
 }
 
 const GameItemStyled = styled.li`
+  display: flex;
   height: 97px;
   margin: 0 0 8px;
   border: 1px solid;
@@ -43,6 +47,7 @@ const GameItemStyled = styled.li`
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    border: 1px solid green;
   }
 `;
 
