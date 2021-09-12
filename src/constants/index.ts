@@ -50,6 +50,6 @@ export const HEADERS = {
   }
 }
 
-export const KEY = 'RGAPI-eda72e6d-9545-40c3-8cd7-70ca0b030aad'
+export const KEY = 'RGAPI-570d0794-b31d-4f6b-a832-e999eeeb7caf'
 
 export const DDRAGON_VER = '10.11.1';

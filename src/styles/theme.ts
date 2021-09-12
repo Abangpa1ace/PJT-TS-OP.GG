@@ -20,6 +20,7 @@ const theme: defaultTheme = {
     '#C4C4C4',
     '#9B9B9B',
     '#555555',
+    '#333333',
   ],
   blue: {
     light: '#ECF2FF',

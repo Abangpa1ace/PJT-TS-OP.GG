@@ -42,8 +42,8 @@ const ChampStyled = styled.article`
     }
 
     .spell, .rune {
-      width: 100%;
-      height: 100%;
+      width: 22.3px;
+      height: 22.3px;
       border-radius: 3px;
     }
 

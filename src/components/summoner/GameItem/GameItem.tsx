@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getMatch } from '../../../services';
 import GameChamp from './GameChamp';
 import GameStats from './GameStats';
+import GameScore from './GameScore';
 
 type Props = {
   puuid: string;
@@ -20,7 +21,6 @@ const GameItem: React.FC<Props> = ({ puuid, gameId }) => {
   
   const fetchMatchRecord = async () => {
     const res = await getMatch(gameId);
-    console.log(res?.data.info);
     setGame(res?.data.info);
   }
 
@@ -28,6 +28,7 @@ const GameItem: React.FC<Props> = ({ puuid, gameId }) => {
     <GameItemStyled winLose={winLose}>
       <GameStats game={game} winLose={winLose} />
       <GameChamp game={game} myInfo={myInfo} />
+      <GameScore myInfo={myInfo} winLose={winLose} />
     </GameItemStyled>
   )
 }
