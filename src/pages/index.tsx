@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import MainPage from '../components/main/MainPage';
 
+
 export default function Home() {
   return (
     <Layout isBlue>

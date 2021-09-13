@@ -13,13 +13,14 @@ type defaultTheme = {
 const theme: defaultTheme = {
   width: {
     'nav': '1300px',
-    'main': '1080px',
+    'main': '1000px',
   },
   gray: [
     '#F9F9F9',
     '#C4C4C4',
     '#9B9B9B',
-    '#757575',
+    '#555555',
+    '#333333',
   ],
   blue: {
     light: '#ECF2FF',
@@ -30,13 +31,15 @@ const theme: defaultTheme = {
     beach: '#2DAF7F',
   },
   win: {
-    light: '#A3CFEC',
+    background: '#A3CFEC',
+    border: '#99b9cf',
     normal: '#64B1E4',
     dim: '#3D95E5',
     font: '#1F8ECD',
   },
   lose: {
-    light: '#E2B6B3',
+    background: '#E2B6B3',
+    border: '#cea7a7',
     normal: '#E89D98',
     dim: '#EE5A52',
     font: '#C6443E',

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { getSummonerInfo } from '../../services'
 import Layout from '../../components/layout'
-import SummonerTop from '../..//components/summoner/summonerTop'
+import SummonerTop from '../../components/summoner/containers/SummonerTop'
+import SummonerBody from '../../components/summoner/containers/SummonerBody'
 
 const SummonerPage = () => {
   const [user, setUser] = useState({});
@@ -12,18 +13,15 @@ const SummonerPage = () => {
   }, [])
 
   const fetchSummonerInfo = async () => {
-    const res = await getSummonerInfo('Mal Francais');
-    await setUser(res.data);
+    const res = await getSummonerInfo('Kilmo');
+    setUser(res?.data);
   }
 
   return (
     <Layout>
       <SummonerContainer>
-        <SummonerTop />
-        <div className='summoner-body'>
-          <section></section>
-          <section></section>
-        </div>
+        <SummonerTop user={user} />
+        <SummonerBody user={user} puuid={user?.puuid} />
       </SummonerContainer>
     </Layout>
   )
@@ -31,10 +29,7 @@ const SummonerPage = () => {
 
 const SummonerContainer = styled.main`
 
-  .summoner-body {
-    height: 1000px;
-    border: 1px solid blue;
-  }
+
 `;
 
 export default SummonerPage

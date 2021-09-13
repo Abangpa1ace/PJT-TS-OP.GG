@@ -16,6 +16,40 @@ export const ROUTES = [
   },
 ]
 
-export const API = 'https://kr.api.riotgames.com/lol';
+export const queueType = {
+  420: {
+    type: 'soloRank',
+    ko: '솔랭'
+  },
+  430: {
+    type: 'normal',
+    ko: '일반'
+  },
+  440: {
+    type: 'teamRank',
+    ko: '자유 5:5랭크'
+  },
+  450: {
+    type: 'aram',
+    ko: '무작위 총력전',
+  }
+}
 
-export const KEY = 'RGAPI-cc63bf5a-996f-4f21-bc7c-c5f3f3d3b141'
+export const API = {
+  kr: 'https://kr.api.riotgames.com/lol',
+  asia: 'https://asia.api.riotgames.com/lol'
+}
+
+export const HEADERS = {
+  headers: {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Origin": "https://developer.riotgames.com",
+    'Access-Control-Allow-Origin': "http://localhost:3001",
+  }
+}
+
+export const KEY = 'RGAPI-570d0794-b31d-4f6b-a832-e999eeeb7caf'
+
+export const DDRAGON_VER = '10.11.1';
