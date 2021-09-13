@@ -1,18 +1,19 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react'
+import { flexCenter } from '@/styles/theme';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styled from 'styled-components';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
+import MainPage from '../components/main/MainPage';
 
 export default function Home() {
-
   return (
     <Layout isBlue>
       <HomePage>
-        <h2>랜딩 페이지!!!</h2>
+        <MainPage />
       </HomePage>
     </Layout>
-  )
+  );
 }
 
 const HomePage = styled.div`
-
+  ${flexCenter}
 `;
