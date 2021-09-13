@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import MainInput from './partial/MainInput';
 
 const MainPage = () => {
   return (
     <MainGroup>
       <MainImg />
-      <MainInput placeholder="소환사명, 소환사명..." />
+      <MainInput />
     </MainGroup>
   );
 };
@@ -20,13 +21,6 @@ const MainGroup = styled.div`
 const MainImg = styled.img`
   width: 200px;
   height: 200px;
-`;
-
-const MainInput = styled.input`
-  margin-top: 40px;
-  width: 500px;
-  height: 50px;
-  padding: 0 20px;
 `;
 
 export default MainPage;
