@@ -1,14 +1,15 @@
+import { flexCenter } from '@/styles/theme';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Layout from '../components/layout';
-import theme, { flexCenter } from '../styles/theme';
-import Main from '../components/homepage/Main';
+import MainPage from '../components/main/MainPage';
+
 
 export default function Home() {
   return (
     <Layout isBlue>
       <HomePage>
-        <Main />
+        <MainPage />
       </HomePage>
     </Layout>
   );
