@@ -22,7 +22,7 @@ const GameItem: React.FC<Props> = ({ puuid, gameId }) => {
   const fetchMatchRecord = async () => {
     const res = await getMatch(gameId);
     setGame(res?.data.info);
-  }
+  };
 
   return (
     <GameItemStyled winLose={winLose}>
