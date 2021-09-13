@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
-import { getRecentMatches, getMatch } from '../../../services';
-import { webCenter  } from '../../../styles/theme';
+import GameItem from '../GameItem/GameItem';
+import { getRecentMatches } from '../../../services';
+import { webCenter } from '../../../styles/theme';
 
 type Props = {
   user: Object;
@@ -10,9 +11,8 @@ type Props = {
 
 const count = 20;
 
-const SummonerBody = ({ user, puuid }) => {
+const SummonerBody: React.FC<Props> = ({ user, puuid }) => {
   const [matches, setMatches] = useState([]);
-  const [matchList, setMatchList] = useState([]);
   const [start, setStart] = useState(0);
 
   useEffect(() => {
@@ -22,47 +22,24 @@ const SummonerBody = ({ user, puuid }) => {
   const fetchRecentMatches = async (puuid) => {
     const result = await getRecentMatches(puuid, start, count);
     setMatches(result?.data);
-    fetchMatchList();
   }
-
-  const fetchMatchList = async () => {
-    if (matches?.length > 0) {
-      matches?.forEach(async (m,i) => {
-        const res = await getMatch(m);
-        setMatchList([...matchList, res?.data.info])
-      })
-      console.log(matchList);
-    }
-  }
-
 
   return (
-    <BodyContainer>
+    <SummonerBodyStyled>
       <div className="body-main">
         <aside></aside>
-        <section>
-          {matches && matches.map(m => <p>{m}</p>)}
-          {/* {matchList && matchList.map((m) => {
-            return (
-              <div>
-                <p>게임종류: {m?.gameMode}</p>
-                <p>게임시점: {m?.gameStartTimestamp}</p>
-                <p></p>
-              </div>
-            )}
-          )} */}
-        </section>
+        <ul>
+          {matches && matches.map(id => <GameItem puuid={puuid} gameId={id} />)}
+        </ul>
       </div>
-    </BodyContainer>
+    </SummonerBodyStyled>
   )
 }
 
 export default SummonerBody;
 
-const BodyContainer = styled.div`
+const SummonerBodyStyled = styled.div`
   padding-top: 70px;
-  height: 800px;
-  border: 1px solid blue;
 
   .body-main {
     ${webCenter};
@@ -71,9 +48,9 @@ const BodyContainer = styled.div`
     grid-template-columns: 300px 690px;
     gap: 10px;
 
-    & > * {
+    & > aside {
       border: 1px solid green;
-      height: 100%;
+      height: 1500px;
     }
   }
 `;

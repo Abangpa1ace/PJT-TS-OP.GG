@@ -5,7 +5,7 @@ import MainLogo from '../../assets/mainImg.png';
 const Main = () => {
   return (
     <MainGroup>
-      <MainImg src={MainLogo} />
+      <MainImg />
       <MainInput placeholder="소환사명, 소환사명..." />
     </MainGroup>
   );
